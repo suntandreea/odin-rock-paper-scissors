@@ -46,10 +46,26 @@ function playRound(computerChoice, playerChoice) {
   }
 }
 
-const computer = getComputerChoice();
-const player = getPlayerChoice();
+function playGame(rounds) {
+  for (let i = 1; i <= rounds; i++) {
+    if (i > 1) {
+      setTimeout;
+    }
+    const computer = getComputerChoice();
+    const player = getPlayerChoice();
+    log("Round ", i, ":");
+    log("Computer picked ", choices[computer], ".");
+    log("You picked ", choices[player], ".");
+    playRound(computer, player);
+    log(
+      `___ Score: ___ Computer: ${computerScore} ___ Player: ${playerScore} ___`
+    );
+  }
 
-log("Computer picked ", choices[computer], ".");
-log("You picked ", choices[player], ".");
+  if (computerScore > playerScore) log("*** Computer wins the game! ***");
+  else if (playerScore > computerScore)
+    log("*** Congrats! You win the game! ***");
+  else log("*** THE GAME IS A TIE :( ***");
+}
 
-playRound(computer, player);
+playGame(5);
